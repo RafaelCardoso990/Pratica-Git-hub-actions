@@ -6,8 +6,8 @@ app.use(json());
 
 app.get("/students", async (req: Request, res: Response) => {
   const students = await prisma.student.findMany();
-  console.log("students deu vei", students);
-  res.send(students, "ok");
+  console.log("students", students);
+  res.send(students);
 });
 
 app.post("/students", async (req: Request, res: Response) => {
