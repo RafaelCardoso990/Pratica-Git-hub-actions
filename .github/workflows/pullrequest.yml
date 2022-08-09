@@ -11,7 +11,7 @@ jobs:
         with:
           envKey_POSTGRES_USER: "postgres"
           envKey_POSTGRES_PASSWORD: "postgres"
-          envKey_POSTGRES_DB: "students__tests"
+          envKey_POSTGRES_DB: "students__test"
           envKey_DATABASE_URL: postgresql://postgres:postgres@db-postgres:5432/students__tests
           file_name: .env.test
       - name: Run tests and build
