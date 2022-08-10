@@ -14,6 +14,8 @@ jobs:
           envKey_POSTGRES_DB: "students__test"
           envKey_DATABASE_URL: postgresql://postgres:postgres@db-postgres:5432/students__tests
           file_name: .env.test
-      - name: Run tests and build
-        run: docker-compose -f docker-compose-test.yml run node_app npm run test npm run build
+      - name: Run tests 
+        run: docker-compose -f docker-compose-test.yml run node_app npm run test
+      - name: Run build
+        run: docker-compose -f docker-compose.yml run nope_app npm run build
         
