@@ -16,11 +16,13 @@ jobs:
           file_name: .env.test
       - name: Run tests 
         run: docker-compose -f docker-compose-test.yml run node_app npm run test
-      - name: Run build
-        run: docker-compose -f docker-compose.yml run nope_app npm run build
+      - name: Make a new envfile
+        uses: SpicyPizza2/create-envfile@v1
         with:
           envKey_POSTGRES_USER: "postgres"
           envKey_POSTGRES_PASSWORD: "postgres"
           envKey_POSTGRES_DB: "students"
           envKey_DATABASE_URL: postgresql://postgres:postgres@db-postgres:5432/students
           file_name: .env
+      - name: Run build    
+        run: docker-compose -f docker-compose.yml run nope_app npm run build
