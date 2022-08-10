@@ -18,4 +18,9 @@ jobs:
         run: docker-compose -f docker-compose-test.yml run node_app npm run test
       - name: Run build
         run: docker-compose -f docker-compose.yml run nope_app npm run build
-        
+        with:
+          envKey_POSTGRES_USER: "postgres"
+          envKey_POSTGRES_PASSWORD: "postgres"
+          envKey_POSTGRES_DB: "students"
+          envKey_DATABASE_URL: postgresql://postgres:postgres@db-postgres:5432/students
+          file_name: .env
